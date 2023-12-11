@@ -29,22 +29,28 @@ repalce ```DIR_PATH``` with yours.
 
 For example, below is the part of given sequences from [MIT Intrinsic Images dataset](https://www.cs.toronto.edu/~rgrosse/intrinsic/):
 
-![ligt01](fig/light01.png | width=50) 
-![ligt04](fig/light04.png) 
-![ligt05](fig/light05.png) 
-![ligt07](fig/light07.png)
+<p align="center">
+    <img src="fig/light01.png" style='width:40%'>
+    <img src="fig/light04.png" style='width:40%'>
+    <img src="fig/light05.png" style='width:40%'>
+    <img src="fig/light07.png" style='width:40%'>
+</p>
 
 At the below, left is the ground truth and right is derived by algorithm:
 
-![reflectance_gt](fig/reflectance_gt.png)
-![reflectance](fig/reflectance.jpg)
+<p align="center">
+    <img src="fig/reflectance_gt.png" style='width:40%'>
+    <img src="fig/reflectance.jpg" style='width:40%'>
+</p>
 
 And, here is the illumination calculated using derived reflectance:
 
-![light0](fig/light0.jpg)
-![light3](fig/light3.jpg) 
-![light4](fig/light4.jpg) 
-![light6](fig/light6.jpg) 
+<p align="center">
+    <img src="fig/light0.jpg" style='width:40%'>
+    <img src="fig/light3.jpg" style='width:40%'>
+    <img src="fig/light4.jpg" style='width:40%'>
+    <img src="fig/light6.jpg" style='width:40%'>
+</p>
 
 if you have folder structure like:
 
