@@ -29,7 +29,7 @@ repalce ```DIR_PATH``` with yours.
 
 For example, below is the part of given sequences from [MIT Intrinsic Images dataset](https://www.cs.toronto.edu/~rgrosse/intrinsic/):
 
-![ligt01](fig/light01.png) 
+![ligt01](fig/light01.png | width=50) 
 ![ligt04](fig/light04.png) 
 ![ligt05](fig/light05.png) 
 ![ligt07](fig/light07.png)
@@ -45,6 +45,7 @@ And, here is the illumination calculated using derived reflectance:
 ![light3](fig/light3.jpg) 
 ![light4](fig/light4.jpg) 
 ![light6](fig/light6.jpg) 
+
 if you have folder structure like:
 
 folder0
