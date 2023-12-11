@@ -26,7 +26,7 @@ def figure4():
 
     for i in range(-fnum-1,fnum):
         im1 = np.zeros((64,64))
-        im1[i+11:i+51, i+11:i+51] = .6 # this puts shadow
+        im1[5*i+11:5*i+51, 5*i+11:5*i+51] = .6 # this puts shadow
         im1 = im1 + circle_img
         big_im1[i+fnum,:,:] = im1
 
@@ -37,27 +37,48 @@ def figure4():
 
     imR, dxs, dys, dx, dy, invKhat = U.getAlbedo(big_im1)
 
-    _, axs = plt.subplots(3)
 
-    axs[0].imshow(big_im1[0,:,:], cmap='gray')
-    axs[0].set_title('frame 1')
-    axs[0].set_xticks([])
-    axs[0].set_yticks([])
+    plt.subplot(331)
+    plt.imshow(big_im1[-1,:,:], cmap='gray')
+    plt.title('frame 1')
+    plt.xticks([])
+    plt.yticks([])
+    plt.subplot(334)
+    plt.imshow(big_im1[0,:,:], cmap='gray')
+    plt.title('frame 2')
+    plt.xticks([])
+    plt.yticks([])
+    plt.subplot(337)
+    plt.imshow(big_im1[1,:,:], cmap='gray')
+    plt.title('frame 3')
+    plt.xticks([])
+    plt.yticks([])
 
-    axs[1].imshow(imR, cmap='gray')
-    axs[1].set_title('reflectance')
-    axs[1].set_xticks([])
-    axs[1].set_yticks([])
+    light1, _ = U.reconsEdge3(dxs[-1,:,:]-dx, dys[-1,:,:]-dy, invKhat)
+    light2, _ = U.reconsEdge3(dxs[0,:,:]-dx, dys[0,:,:]-dy, invKhat)
+    light3, _ = U.reconsEdge3(dxs[1,:,:]-dx, dys[1,:,:]-dy, invKhat)
 
-    # to get lighting we subtract median lighting from the gradient
-    # and reconstruct
+    plt.subplot(332)
+    plt.imshow(light1, cmap='gray')
+    plt.title('light 1')
+    plt.xticks([])
+    plt.yticks([])
+    plt.subplot(335)
+    plt.imshow(light2, cmap='gray')
+    plt.title('light 2')
+    plt.xticks([])
+    plt.yticks([])
+    plt.subplot(338)
+    plt.imshow(light3, cmap='gray')
+    plt.title('light 3')
+    plt.xticks([])
+    plt.yticks([])
 
-    light1, _ = U.reconsEdge3(dxs[0,:,:]-dx, dys[0,:,:]-dy, invKhat)
-    axs[2].imshow(light1, cmap='gray')
-    axs[2].set_title('lighting frame 1')
-    axs[2].set_xticks([])
-    axs[2].set_yticks([])
-
+    plt.subplot(133)
+    plt.imshow(imR, cmap='gray')
+    plt.title('reflectance')
+    plt.xticks([])
+    plt.yticks([])
     plt.show()
 
 def with_image(dir_path):
